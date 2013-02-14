@@ -44,6 +44,7 @@ module.exports = function(grunt) {
 
     this.files.forEach(function(file) {
       grunt.file.write(file.dest, content);
+      grunt.log.writeln('File "' + file.dest + '" created.');
     });
   });
 

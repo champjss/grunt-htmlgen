@@ -93,5 +93,5 @@ URL or array of URLs of scripts to include.
 
 ## Release history
 
-* 2013-02-14    v0.1.0    Change the configuration by moving title, css, js options into the options object and let them support templating.
+* 2013-02-14    v0.1.0    Change the configuration by moving title, css, js options into the options.
 * 2013-02-14    v0.0.1    First release.
