@@ -6,19 +6,33 @@
 
 htmlgen is a [multi task](https://github.com/gruntjs/grunt/wiki/Configuring-tasks) so any targets, files and options should be specified according to the multi task documentation.
 
-## Options
+## Configurations
 
 ### dest
-[String] Location of the generated HTML file.
 
-### title
-[String] Title of the page to generate (optional).
+Type: `String`
 
-### css (optional)
-[String|Array] URL or array of URLs of stylesheets to include (optional).
+Location of the generated HTML file.
 
-### js (optional)
-[String|Array] URL or array of URLs of scripts to include (optional).
+### options
+
+#### title
+
+Type: `String`
+
+Title of the page to generate.
+
+#### css (optional)
+
+Type: `String`, `Array`
+
+URL or array of URLs of stylesheets to include.
+
+#### js (optional)
+
+Type: `String`, `Array`
+
+URL or array of URLs of scripts to include.
 
 ## Samples
 
@@ -28,12 +42,28 @@ htmlgen is a [multi task](https://github.com/gruntjs/grunt/wiki/Configuring-task
       'use strict';
 
       grunt.initConfig({
+        meta: {
+          sample: {
+            css_reset: 'styles/reset.css',
+            js_index: 'scripts/index.js'
+          }
+        }
         htmlgen: {
-          index: {
-            title: 'Title',
-            css: ['styles/style1.css', 'styles/style2.css', 'styles/style3.css'],
-            js: ['scripts/script1.js', 'scripts/script2.js', 'scripts/script3.js'],
-            dest: 'index.html'
+          sample: {
+            dest: 'tmp/sample.html',
+            options: {
+              title: 'Title',
+              css: [
+                '<%= meta.sample.css_reset %>',
+                'styles/style1.css',
+                'styles/style2.css'
+              ],
+              js: [
+                'scripts/script1.js',
+                'scripts/script2.js',
+                '<%= meta.sample.js_index %>'
+              ],
+            }
           }
         }
       });
@@ -43,20 +73,25 @@ htmlgen is a [multi task](https://github.com/gruntjs/grunt/wiki/Configuring-task
 
     };
 
-### Result after run ``grunt`` (index.html)
+### Content of ``tmp/sample.html`` after run ``grunt`` or ``grunt:sample``
 
     <!doctype html>
     <html>
     <head>
     <meta charset="utf-8">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
     <link rel="stylesheet" type="text/css" href="styles/style1.css">
     <link rel="stylesheet" type="text/css" href="styles/style2.css">
-    <link rel="stylesheet" type="text/css" href="styles/style3.css">
     </head>
     <body>
     <script src="scripts/script1.js"></script>
     <script src="scripts/script2.js"></script>
-    <script src="scripts/script3.js"></script>
+    <script src="scripts/index.js"></script>
     </body>
     </html>
+
+## Release history
+
+* 2013-02-14    v0.1.0    Change the configuration by moving title, css, js options into the options object and let them support templating.
+* 2013-02-14    v0.0.1    First release.

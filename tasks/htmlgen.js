@@ -39,9 +39,11 @@ module.exports = function(grunt) {
   };
 
   grunt.registerMultiTask('htmlgen', 'Generate HTML', function() {
-    this.files.forEach(function(f) {
-      var content = createHTMLString(f);
-      grunt.file.write(f.dest, content);
+    var options = this.options(),
+        content = createHTMLString(options);
+
+    this.files.forEach(function(file) {
+      grunt.file.write(file.dest, content);
     });
   });
 
