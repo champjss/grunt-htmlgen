@@ -33,7 +33,7 @@ htmlgen is a [multi task](https://github.com/gruntjs/grunt/wiki/Configuring-task
             title: 'Title',
             css: ['styles/style1.css', 'styles/style2.css', 'styles/style3.css'],
             js: ['scripts/script1.js', 'scripts/script2.js', 'scripts/script3.js'],
-            dest: 'tmp/index.html'
+            dest: 'index.html'
           }
         }
       });
