@@ -11,32 +11,5 @@
   "eqnull"  : true,
   "node"    : true,
   "es5"     : true,
-  "browser" : true,
-  "globals" : {
-    "$"            : true,
-    "sblneditor"   : true,
-    "grammar"      : false,
-    "JST"          : false,
-    "jQuery"       : false,
-    "_"            : false,
-    "Backbone"     : false,
-    "createjs"     : false,
-    "wysihtml5"    : false,
-    "TweenLite"    : false,
-    "TweenMax"     : false,
-    "TimelineLite" : false,
-    "TimelineMax"  : false,
-    "Raphael"      : false,
-    "jasmine"      : false,
-    "it"           : false,
-    "xit"          : false,
-    "describe"     : false,
-    "xdescribe"    : false,
-    "beforeEach"   : false,
-    "afterEach"    : false,
-    "expect"       : false,
-    "spyOn"        : false,
-    "runs"         : false,
-    "waitsFor"     : false
-  }
+  "browser" : true
 }
