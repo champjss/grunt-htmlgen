@@ -1,7 +1,7 @@
 {
   "name": "grunt-htmlgen",
   "description": "Grunt task to generate HTML files with stylesheet and script elements.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Jatesadakarn Seangrat",
     "email": "champjss@gmail.com",

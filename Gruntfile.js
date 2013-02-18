@@ -54,6 +54,12 @@ module.exports = function(grunt) {
       no_file: {
         dest: 'tmp/no_file.html'
       },
+      custom_charset: {
+        dest: 'tmp/custom_charset.html',
+        options: {
+          charset: 'tis-620'
+        }
+      },
       sample: {
         dest: 'tmp/sample.html',
         options: {
@@ -68,6 +74,7 @@ module.exports = function(grunt) {
             'scripts/script2.js',
             '<%= meta.sample.js_index %>'
           ],
+          body: '<div id="appContainer"></div>'
         }
       }
     },

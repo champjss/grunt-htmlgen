@@ -22,9 +22,15 @@ Type: `String`
 
 Location of the generated HTML file.
 
-### options
+### options (optional)
 
-#### title
+#### charset (optional)
+
+Type: `String`
+
+Character set of the page (will be used in meta element). Default value is ``utf-8``
+
+#### title (optional)
 
 Type: `String`
 
@@ -41,6 +47,12 @@ URL or array of URLs of stylesheets to include.
 Type: `String|Array`
 
 URL or array of URLs of scripts to include.
+
+#### body (optional)
+
+Type: `String`
+
+Body HTML to include in the page.
 
 ## Samples
 
@@ -101,6 +113,7 @@ URL or array of URLs of scripts to include.
 
 ## Release history
 
+* 2013-02-18    v0.1.2    Add charset and body options
 * 2013-02-18    v0.1.1    Update development dependencies for Grunt 0.4.0
 * 2013-02-14    v0.1.0    Change the configuration by moving title, css, js options into the options.
 * 2013-02-14    v0.0.1    First release.

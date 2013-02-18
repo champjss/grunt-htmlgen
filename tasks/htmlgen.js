@@ -11,7 +11,10 @@ module.exports = function(grunt) {
     content += '<!doctype html>' + linefeed;
     content += '<html>' + linefeed;
     content += '<head>' + linefeed;
-    content += '<meta charset="utf-8">' + linefeed;
+
+    if (kindOf(options.charset) === 'string') {
+      content += '<meta charset="' + options.charset + '">' + linefeed;
+    }
 
     if (kindOf(options.title) === 'string') {
       content += '<title>' + options.title + '</title>' + linefeed;
@@ -26,6 +29,10 @@ module.exports = function(grunt) {
     content += '</head>' + linefeed;
     content += '<body>' + linefeed;
 
+    if (kindOf(options.body) === 'string') {
+      content += options.body + linefeed;
+    }
+
     recurse(options.js, function(src) {
       if (kindOf(src) === 'string') {
         content += '<script src="' + src + '"></script>' + linefeed;
@@ -39,7 +46,9 @@ module.exports = function(grunt) {
   };
 
   grunt.registerMultiTask('htmlgen', 'Generate HTML', function() {
-    var options = this.options(),
+    var options = this.options({
+          charset: 'utf-8'
+        }),
         content = createHTMLString(options);
 
     this.files.forEach(function(file) {

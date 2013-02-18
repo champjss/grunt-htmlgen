@@ -50,6 +50,18 @@ exports.htmlgen = {
     test.done();
   },
 
+  custom_charset: function(test) {
+    'use strict';
+
+    test.expect(1);
+
+    var actual = grunt.file.read('tmp/custom_charset.html');
+    var expected = grunt.file.read('test/expected/custom_charset.html');
+    test.equal(actual, expected, 'should generate a HTML with no script and style');
+
+    test.done();
+  },
+
   sample: function(test) {
     'use strict';
 
