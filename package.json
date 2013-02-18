@@ -23,5 +23,8 @@
     "grunt-contrib-jshint": "~0.1",
     "grunt-contrib-clean": "~0.4",
     "grunt-contrib-nodeunit": "~0.1"
+  },
+  "scripts": {
+    "test": "grunt test"
   }
 }
