@@ -1,4 +1,4 @@
-# grunt-htmlgen
+# grunt-htmlgen [![Build Status](https://travis-ci.org/champjss/grunt-htmlgen.png?branch=master)](https://travis-ci.org/champjss/grunt-htmlgen)
 
 [Grunt](http://gruntjs.com) (0.4.x) task to generate HTML files with stylesheet and script elements.
 
