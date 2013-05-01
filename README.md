@@ -117,3 +117,7 @@ Body HTML to include in the page.
 * 2013-02-18    v0.1.1    Update development dependencies for Grunt 0.4.0
 * 2013-02-14    v0.1.0    Change the configuration by moving title, css, js options into the options.
 * 2013-02-14    v0.0.1    First release.
+
+## License
+
+You may use this project under the terms of the MIT License.
